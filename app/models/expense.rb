@@ -52,6 +52,7 @@ class Expense < ActiveRecord::Base
     case connection.adapter_name
       when "MySQL" then "YEAR(date)"
       when "SQLite" then "STRFTIME('%Y', date)"
+      when "PostgreSQL" then "date_part('year', date)"
     end
   end
   
@@ -59,6 +60,7 @@ class Expense < ActiveRecord::Base
     case connection.adapter_name
       when "MySQL" then "MONTH(date)"
       when "SQLite" then "STRFTIME('%m', date)"
+      when "PostgreSQL" then "date_part('month', date)"
     end
   end
   
