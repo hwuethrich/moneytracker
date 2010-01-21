@@ -1,0 +1,18 @@
+object_id = object.class.name.underscore.dasherize
+object_sym = object.class.name.underscore
+objects_id = object_id.pluralize
+object_row_id = "#{object_id}-row-#{object.id}"
+objects_table_id = objects_id
+
+page.replace object_row_id, :partial => 'form', 
+  :locals => { object_sym.to_sym => object, :form_id => form_id }
+  
+page.visual_effect(
+  :blindDown,
+  "form-container-#{form_id}", 
+  :duration => 0.5,
+  :scaleFrom => 15,
+  :afterFinish => "function() { $('#{form_id}').focusFirstElement(); }"
+)
+
+page.TableKit.unloadTable(objects_table_id)

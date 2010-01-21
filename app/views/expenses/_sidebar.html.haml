@@ -1,0 +1,4 @@
+= render :partial => 'common/month_picker', :locals => { :date => date }
+= render :partial => 'balance/user_balance', :locals => { :year => date.year }
+= render :partial => 'expense_stats', :locals => { :date => date }
+= render :partial => 'user_stats', :locals => { :date => date }

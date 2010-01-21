@@ -1,0 +1,37 @@
+%tr{:id => "form-row-#{form_id}"}
+  %td{:colspan => 19, :class => recurrent_expense.new_record? ? "new" : "edit"}
+    %div{:id => "form-container-#{form_id}", :style => "display:none;"}
+      %div
+        %h4= form_title recurrent_expense
+        .form-errors{:id => "form-errors-#{form_id}"}
+      
+        - remote_recurrent_expenses_form(recurrent_expense, form_id) do |f|
+          %fieldset
+            .form-row
+              .form-element
+                = f.label :amount, RecurrentExpense.human_attribute_name('amount')
+                = f.text_field :amount, :size => 7, :maxlenth => 10, :class => "currency"
+            .form-row
+              .form-element
+                = f.label :recurrance, t('views.recurrent_expense.form.recurrance')
+                %span{:style => "font-size: 14px; font-weight: bold;"}
+                  = t 'views.recurrent_expense.form.every'
+                = select :recurrent_expense, :day, (1..31)
+                %span{:style => "font-size: 14px; font-weight: bold;"}
+                  = t 'views.recurrent_expense.form.day_of'
+              .form-element
+                %label &nbsp;
+                - (1..12).each do |month|
+                  %div{:style => "float: left; width: 55px;"}
+                    %label
+                      = check_box_tag "recurrent_expense[months][]", month, recurrent_expense.months.include?(month), :style => "margin: 0px"
+                      = t('date.abbr_month_names')[month]
+                  - if month == 6
+                    %br
+            .form-row
+              .form-element
+                = f.label :description, RecurrentExpense.human_attribute_name('description')
+                = text_field_with_auto_complete :recurrent_expense, :description, { :size => 40, :maxlenth => 40 }, { :skip_style => true }
+          %p.form-footer
+            = f.submit t('views.form.save')
+            = cancel_recurrent_expense_form_button form_id

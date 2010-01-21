@@ -1,0 +1,8 @@
+de:
+  views:
+
+    session:
+      
+      # Menu
+      menu:
+        destroy: Abmelden

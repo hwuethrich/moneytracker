@@ -1,0 +1,42 @@
+= render :partial => 'common/highlight_row', :object => @recurrent_payment
+
+#recurrent-payments-container
+  
+  = rounded_corner_top
+  
+  .grid-table-title
+    %h3= "Recurrent Payments"
+    .actions= new_recurrent_payment_link
+  
+  %table#recurrent-payments.grid{:cellspacing => 0, :cellpadding => 0, :class => "sortable"}
+
+    %thead#recurrent-payments-head
+      
+      - if @recurrent_payment && @recurrent_payment.new_record?
+        = render :partial => 'form', :locals => { :recurrent_payment => @recurrent_payment, :form_id => @form_id }
+      
+      %tr
+        %th.nosort.first-col{:style => "width: 15px"}
+        %th{:style=> "width: 100px"} 
+          = RecurrentPayment.human_attribute_name('amount')
+        %th{:style=> "width: 120px"}
+          = RecurrentPayment.human_attribute_name('sender')
+        %th{:style=> "width: 120px"}
+          = RecurrentPayment.human_attribute_name('recipient')
+        %th.text
+          = RecurrentPayment.human_attribute_name('comment')
+        %th.nosort{:style=> "width: 20px"}
+          = RecurrentPayment.human_attribute_name('day')
+        
+        - (1..12).each do |m|
+          %th.center.nosort{:style => "width: 15px"}= m
+          
+        %th.nosort{:style => "width: 100px"}
+    
+    %tbody#recurrent-payments-body
+      = render :partial => "recurrent_payment", :collection => @recurrent_payments
+      
+  .grid-table-footer
+    #recurrent-payment-indicator.indicator{:style => "display:none"} Processing request...
+    
+  = rounded_corner_bottom

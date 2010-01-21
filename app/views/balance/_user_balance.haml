@@ -1,0 +1,52 @@
+#user-balance.sidebar-block
+  = rounded_corner_top
+
+  .sidebar-title
+    %h2= t "views.balance.user_balance"
+  
+  .sidebar-content{:style => "padding: 0px; background-color: #E3F2DC;"}
+    - year ||= Date.today.year
+    = user_delta_histroy_chart(current_user, year)
+  
+  - cache "balance/user/%s" % [current_user.id] do
+    - debts = current_user.debts
+    - credits = current_user.credits
+    
+    - unless credits.empty?
+      %table.grid{:cellpadding => 0, :cellspacing => 0}
+        %thead
+          %tr
+            %th.first-col{:colspan => 2} 
+              %span{:style => "float:right;font-weight:normal;"}
+                &Sigma;
+                = number_to_currency(credits.values.sum)
+              = t "views.balance.credits"
+
+        %tbody
+          - credits.each do |user, amount|
+            %tr{:class => cycle('odd', 'even')}
+              %td
+                = user.name
+              %td.right.last-col{:style => "width: 90px"}
+                = number_to_currency(amount)
+                
+    - unless debts.empty?
+      %table.grid{:cellpadding => 0, :cellspacing => 0}
+        %thead
+          %tr
+            %th.first-col{:colspan => 3}
+              %span{:style => "float:right;font-weight:normal;"}
+                &Sigma;
+                = number_to_currency(debts.values.sum)
+              = t "views.balance.debts"
+        %tbody
+          - debts.each do |user, amount|
+            %tr{:class => cycle('odd', 'even')}
+              %td.action.center{:style => "width: 1%"}
+                = link_to t("views.action.pay"), new_payment_path(:payment => {:amount => amount, :recipient_id => user.id })
+              %td
+                = user.name
+              %td.right.last-col{:style => "width: 90px"}
+                = number_to_currency(amount)
+    
+  = rounded_corner_bottom

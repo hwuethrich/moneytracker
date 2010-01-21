@@ -1,0 +1,15 @@
+object_id = object.class.name.underscore.dasherize
+objects_id = object_id.pluralize
+object_row_id = "#{object_id}-row-#{object.id}"
+objects_table_id = objects_id
+
+page.visual_effect(
+  :fade,
+  object_row_id,
+  :duration => 0.5
+)
+
+page.delay(0.5) do
+  page.remove object_row_id
+  page << "TableKit.reloadTable('#{objects_table_id}');"
+end

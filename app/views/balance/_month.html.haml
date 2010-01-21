@@ -1,0 +1,51 @@
+- cache "balance/month/%s/%s" % [month.year, month.month] do
+  - if month_has_transactions?(month)
+    %tr.separator
+      %td{:colspan => 7}
+  
+      %tr.header
+        %td= link_to month.strftime("%B"), expenses_path(:month => month.month, :year => month.year)
+        %td.right{:style => "width: 100px"}
+          %span{:style => "float: left"}
+            &Sigma;
+          = number_to_currency(Expense.sum_by_month(month), false)
+        %td{:style => "width: 100px"} Sent
+        %td{:style => "width: 100px"} Received
+        %td{:style => "width: 100px"}
+        %td.right{:style => "width: 100px"}
+          %span{:style => "float: left"}
+            &Delta;
+          %small &empty;
+          = number_to_currency(Expense.average_by_month(month), false)
+        %td{:style => "width: 100px"}
+      
+    - reset_cycle
+    
+    - User.by_name.each do |u|    
+      %tr{:class => cycle("odd", "even")}
+        %td= u.name
+        - exp_sum = number_to_currency(u.expenses_sum_by_month(month), false)
+        - pay_sent_sum = number_to_currency(u.payments_sum_sent_by_month(month), false)
+        - pay_recv_sum = number_to_currency(u.payments_sum_received_by_month(month), false)
+        %td.right= exp_sum
+        %td.right
+          %small{:style => "float: left; color: #9FAEB2;"} +
+          = pay_sent_sum
+        %td.right
+          %small{:style => "float: left; color: #9FAEB2;"} -
+          = pay_recv_sum
+        %td.right.highlight
+          %small{:style => "float: left; color: #9FAEB2;"} =
+          = number_to_currency(u.balance_by_month(month), false)
+    
+        - d = u.delta_by_month(month)
+        %td.right{:class => d < 0 ? "debitor" : "creditor"}
+          %small{:style => "float: left; color: #9FAEB2;"} - &empty;
+          = number_to_currency(d, false)
+        
+        - d = u.delta_until(Date.civil(month.year, month.month).end_of_month)
+        %td.right.highlight.last-col{:class => d < 0 ? "debitor" : "creditor"}
+          %span{:style => "float: left; color: #9FAEB2;"}
+            &Sigma;
+          = number_to_currency(d, false)
+    

@@ -1,0 +1,24 @@
+#user-stats.sidebar-block
+  = rounded_corner_top
+
+  .sidebar-title
+    %h2= t "views.expense.user_statistic"
+      
+  %table.grid{:cellpadding => 0, :cellspacing => 0}
+    
+    %thead
+      %tr
+        %th.first-col= User.human_name
+        %th.right{:style => 'width: 65px'}
+          %span{:style => 'float: left'}
+            &Sigma;
+          = number_to_currency(Expense.sum_by_month(date), false)
+    
+    %tbody
+    
+      - User.by_name.each do |u|
+        %tr{:class => cycle('odd', 'even')}
+          %td= truncate(u.name, :length => 18)
+          %td.right.last-col= number_to_currency(u.expenses_sum_by_month(date), false)
+
+  = rounded_corner_bottom

@@ -1,0 +1,12 @@
+table#recurrent-expenses tbody td.recurrent-expense {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(../images/icons/recurrent-expense.png); }
+table#recurrent-expenses tbody td.active-month {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(../images/icons/bullet_gray.png); }
+table#recurrent-expenses tbody td.active-month-created {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(../images/icons/bullet_green.png); }

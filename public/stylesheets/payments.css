@@ -1,0 +1,8 @@
+table#payments tbody td.payment {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(../images/icons/payment.png); }
+table#payments tbody td.recurrent-payment {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(../images/icons/recurrent-payment.png); }

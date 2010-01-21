@@ -1,0 +1,41 @@
+= render :partial => 'common/highlight_row', :object => @payment
+
+#payments-container
+  
+  = rounded_corner_top
+  
+  .grid-table-title
+    %h3 
+      =Payment.human_name(:count => 2)
+      = " - "
+      = l @date, :format => "%B %Y"
+    .actions= new_payment_link(@date)
+  
+  %table#payments.grid{:cellspacing => 0, :cellpadding => 0, :class => "sortable"}
+  
+    %thead#payments-head
+      
+      - if @payment && @payment.new_record?
+        = render :partial => 'form', :locals => { :payment => @payment, :form_id => @form_id, :show => true }
+      
+      %tr
+        %th.nosort.first-col{:style => "width: 15px"}
+        %th.sortfirstasc{:style=> "width: 70px"} 
+          = Payment.human_attribute_name 'date'
+        %th{:style=> "width: 150px"} 
+          = Payment.human_attribute_name 'sender'
+        %th{:style=> "width: 150px"}
+          = Payment.human_attribute_name 'recipient'
+        %th{:style=> "width: 100px"}
+          = Payment.human_attribute_name 'amount'
+        %th.text
+          = Payment.human_attribute_name 'comment'
+        %th.nosort{:style => "width: 100px"}
+    
+    %tbody#payments-body
+      = render :partial => "payment", :collection => @payments
+      
+  .grid-table-footer
+    #payment-indicator.indicator{:style => "display:none"} Processing request...
+    
+  = rounded_corner_bottom

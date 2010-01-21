@@ -1,0 +1,40 @@
+%tr{:id => "form-row-#{form_id}"}
+  %td{:colspan => 19, :class => recurrent_payment.new_record? ? "new" : "edit"}
+    %div{:id => "form-container-#{form_id}", :style => "display:none;"}
+      %div
+        %h4= recurrent_payment.new_record? ? "New Recurrent Expense" : "Edit Recurrent Expense"
+        .form-errors{:id => "form-errors-#{form_id}"}
+      
+        - remote_recurrent_payments_form(recurrent_payment, form_id) do |f|
+          %fieldset
+            .form-row
+              .form-element
+                = f.label :amount
+                = f.text_field :amount, :size => 7, :maxlenth => 10, :class => "currency"
+              .form-element
+                = f.label :recipient
+                = collection_select :recurrent_payment, :recipient_id, @recipients, :id, :name, {:include_blank => true}, {:style => "width: 250px"}
+            .form-row
+              .form-element
+                = f.label :recurrance
+                %span{:style => "font-size: 14px; font-weight: bold;"}
+                  Every
+                = select :recurrent_payment, :day, (1..31)
+                %span{:style => "font-size: 14px; font-weight: bold;"}
+                  of
+              .form-element
+                %label &nbsp;
+                - (1..12).each do |month|
+                  %div{:style => "float: left; width: 55px;"}
+                    %label
+                      = check_box_tag "recurrent_payment[months][]", month, recurrent_payment.months.include?(month), :style => "margin: 0px;"
+                      = t('date.abbr_month_names')[month]
+                  - if month == 6
+                    %br
+            .form-row
+              .form-element
+                = f.label :comment
+                = f.text_field :comment, :size => 40, :maxlenth => 40
+          %p.form-footer
+            = f.submit "Save"
+            = cancel_recurrent_payment_form_button form_id

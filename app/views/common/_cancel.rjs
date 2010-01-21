@@ -1,0 +1,25 @@
+form_row = "form-row-#{form_id}"
+partial_name = object.class.name.underscore
+object_id = object.class.name.underscore.dasherize
+objects_id = object_id.pluralize
+objects_table_id = objects_id
+
+page.visual_effect(
+  :blindUp, 
+  "form-container-#{form_id}", 
+  :duration => 0.5,
+  :scaleTo => object.nil? ? 0 : "($('#{objects_table_id}').select('th').first().getHeight() / $('form-row-#{form_id}').getHeight()) * 100.0"
+)
+page.delay(0.5) do
+  if object.nil?
+    page.remove "form-row-#{form_id}"
+  else
+    page.replace(
+      "form-row-#{form_id}", 
+      :partial => partial_name, 
+      :object => object
+    )
+    page << "TableKit.reload('#{objects_table_id}');"
+    page << "if($('#{objects_table_id}').select('td.edit').size() > 0) TableKit.unloadTable('#{objects_table_id}');"
+  end
+end

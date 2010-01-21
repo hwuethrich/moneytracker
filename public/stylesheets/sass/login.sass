@@ -1,0 +1,65 @@
+@import colors.sass
+
+#login-logo
+  :position relative
+  :top 0px
+  :display block
+  :margin
+    :left auto
+    :right auto
+    
+div#login
+  :position relative
+  :top -200px
+  :width 250px
+  :opacity 0.9
+  :margin
+    :left auto
+    :right auto
+  
+  .notice, .error
+    :padding 10px 2px 2px 25px
+    :color white
+    :font-size 10px
+    :background
+      :repeat no-repeat
+      :position 2px 9px
+  
+  .notice
+    :background-image url(../images/icons/information.png)
+      
+  .error
+    :background-image url(../images/icons/exclamation.png)
+
+  .login-form
+    :padding 10px 10px 5px 10px
+    :margin 0px
+    :background-color #414751
+    :position relative
+
+    label
+      :padding-bottom 10px
+      :font
+        :weight normal
+        :size 12px
+      :display block
+      :color white
+
+    .login, .password
+      :width 200px
+      :background
+        :repeat no-repeat
+        :position 4px center
+      :padding 4px 3px 4px 25px
+        
+    .login
+      :background
+        :image url(../images/icons/user.png)
+
+    .password
+      :background
+        :image url(../images/icons/key.png)
+        
+    input[type='submit']
+      :float right
+      :margin-top -25px

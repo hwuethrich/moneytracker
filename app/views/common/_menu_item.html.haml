@@ -1,0 +1,7 @@
+- label = t "views.#{controller.singularize}.menu.#{action}"
+- url = url_for(:controller => controller, :action => action)
+- cls = 'menu-item'
+- cls += '-active' if @controller.controller_name == controller
+- icon = image_path("icons/" + controller.singularize + ".png")
+- style = "background-image: url(#{icon})"
+%a{:class => cls, :href => url}= label

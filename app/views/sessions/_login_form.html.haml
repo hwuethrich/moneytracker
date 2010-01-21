@@ -1,0 +1,30 @@
+:javascript
+  Event.observe(window, 'load', function() {
+    $('password').select();
+  });
+
+- form_tag session_path do
+  = rounded_corner_top
+  .login-form
+    %div{:style => "opacity: 1.0;"}
+    
+      %label
+        Username
+        %br
+        = text_field_tag 'login', @login, :class => 'login'
+        
+      %label
+        Password
+        %br
+        = password_field_tag 'password', nil, :class => 'password'
+        
+      %label
+        = check_box_tag 'remember_me', @remember_me
+        Remember me
+        
+      = submit_tag 'Login &raquo;'
+      
+      - if flash[:error]
+        .error 
+          = flash[:error]
+  = rounded_corner_bottom

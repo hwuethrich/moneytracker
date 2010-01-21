@@ -1,0 +1,6 @@
+- if object && !object.new_record?
+  - object_row = "#{object.class.name.underscore.dasherize}-row-#{object.id}"
+  :javascript
+    Event.observe(window, 'load', function() {
+      new Effect.Highlight('#{object_row}', {duration: 10});
+    });

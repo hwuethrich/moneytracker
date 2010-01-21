@@ -1,0 +1,19 @@
+.sidebar-block
+  = rounded_corner_top
+
+  .sidebar-title
+    %h2 
+      = t "views.year_picker.year"
+      .right
+        %small
+          = link_to t("views.year_picker.current"), url_for(:year => Date.today.year)
+
+  .sidebar-content
+    .year-picker
+      - form_tag url_for, :method => :get do
+        = link_to "&laquo;", url_for(:year => year - 1), :class => 'prev'
+        =# select_year year, {:end_year => Date.today.year }, { :onchange => "this.form.submit();", :name => "year" }
+        %span.year= year
+        = link_to "&raquo;", url_for(:year => year + 1), :class => 'next'
+
+  = rounded_corner_bottom

@@ -1,0 +1,13 @@
+%tr{:id => "expense-row-%s" % expense.id, :class => cycle("odd", "even")}
+  %td{:class => expense.recurrent? ? "recurrent-expense" : "expense" }
+  %td.right= h expense.date
+  %td.right= h number_to_currency(expense.amount)
+  %td= h expense.user.name
+  %td
+    - if expense.recurrent?
+      = link_to expense.description, recurrent_expense_path(expense.recurrent_expense)
+    - else
+      = expense.description
+  %td.action.center
+    = edit_expense_link expense
+    = destroy_expense_link expense

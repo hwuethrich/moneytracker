@@ -1,0 +1,7 @@
+-content_for(:page_title) do
+  Payments
+
+-content_for(:sidebar) do
+  = render :partial => "sidebar", :locals => {:date => @date}
+  
+= render :partial => "payments"

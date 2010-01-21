@@ -1,0 +1,22 @@
+form_row = "form-row-#{form_id}"
+partial_name = object.class.name.underscore
+object_id = object.class.name.underscore.dasherize
+objects_id = object_id.pluralize
+object_row_id = "#{object_id}-row-#{object.id}"
+objects_table_id = objects_id
+
+page.insert_html :top, "#{objects_table_id}-body", :partial => partial_name, :object => object
+page << "TableKit.reload('#{objects_table_id}');"
+page << "if($('#{objects_table_id}').select('td.edit').size() > 0) TableKit.unloadTable('#{objects_table_id}');"
+page.visual_effect(
+  :highlight, 
+  object_row_id, 
+  :duration => 2,
+  :afterFinish => "function() { $('#{object_row_id}').setStyle({ backgroundColor: '' }); }"
+)
+page.visual_effect(
+  :blindUp, 
+  "form-container-#{form_id}", 
+  :duration => 0.5,
+  :afterFinish => "function() { $('#{form_row}').remove(); }"
+)

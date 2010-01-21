@@ -1,0 +1,27 @@
+#users-container
+  
+  = rounded_corner_top
+  
+  .grid-table-title
+    %h3 Users
+    .actions
+      = if_authorized?(:new, User) do new_user_link end
+
+  %table#users.grid{:cellspacing => 0, :cellpadding => 0, :class => "sortable"}
+  
+    %thead#users-head
+      %tr
+        %th.nosort.first-col{:style => "width: 15px"}
+        %th.sortfirstasc Login
+        %th Name
+        %th E-Mail
+        %th Bank Account No.
+        %th.nosort{:style => "width: 100px"}
+        
+    %tbody#users-body
+      = render :partial => "user", :collection => @users
+      
+  .grid-table-footer
+    #user-indicator.indicator{:style => "display:none"} Processing request...
+    
+  = rounded_corner_bottom

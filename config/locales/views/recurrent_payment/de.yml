@@ -1,0 +1,14 @@
+de:
+  views:
+
+    recurrent_payment:
+      
+      # Menu
+      menu:
+        index: Wiederkehrende
+      
+      # Form
+      form:
+        title:
+          edit: Wiederkehrende Zahlung bearbeiten
+          new: Neue wiederkehrende Zahlung erfassen

@@ -1,0 +1,16 @@
+#expense-stats.sidebar-block
+  = rounded_corner_top
+
+  .sidebar-title
+    %h2= t "views.expense.expense_statistic"
+   
+  %table.grid{:cellpadding => 0, :cellspacing => 0}
+    %thead
+      %tr
+        %th.first-col= t "views.expense.history"
+    %tbody
+      %tr{:style => "background-color: #E3F2DC;"}
+        %td.last-col{:style => "padding: 0px"}
+          = expenses_history_chart(date.year)
+
+  = rounded_corner_bottom

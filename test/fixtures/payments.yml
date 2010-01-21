@@ -1,0 +1,9 @@
+<% for i in 1..1000 %>
+payment<%= i %>:
+  id:           <%= i %>
+  amount:       <%= rand(1000) / 10.0 %>
+  comment:      Payment <%= i %>
+  date:         <%= (Date.today - rand(1000).days).to_s(:db) %>
+  sender_id:    <%= rand(10) + 1 %>
+  recipient_id: <%= rand(10) + 1 %>
+<% end %>

@@ -1,0 +1,47 @@
+#login-logo {
+  position: relative;
+  top: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+div#login {
+  position: relative;
+  top: -200px;
+  width: 250px;
+  opacity: 0.9;
+  margin-left: auto;
+  margin-right: auto; }
+  div#login .notice, div#login .error {
+    padding: 10px 2px 2px 25px;
+    color: white;
+    font-size: 10px;
+    background-repeat: no-repeat;
+    background-position: 2px 9px; }
+  div#login .notice {
+    background-image: url(../images/icons/information.png); }
+  div#login .error {
+    background-image: url(../images/icons/exclamation.png); }
+  div#login .login-form {
+    padding: 10px 10px 5px 10px;
+    margin: 0px;
+    background-color: #414751;
+    position: relative; }
+    div#login .login-form label {
+      padding-bottom: 10px;
+      font-weight: normal;
+      font-size: 12px;
+      display: block;
+      color: white; }
+    div#login .login-form .login, div#login .login-form .password {
+      width: 200px;
+      background-repeat: no-repeat;
+      background-position: 4px center;
+      padding: 4px 3px 4px 25px; }
+    div#login .login-form .login {
+      background-image: url(../images/icons/user.png); }
+    div#login .login-form .password {
+      background-image: url(../images/icons/key.png); }
+    div#login .login-form input[type='submit'] {
+      float: right;
+      margin-top: -25px; }

@@ -1,0 +1,23 @@
+%tr{:id => "form-row-#{form_id}"}
+  %td{:colspan => 7, :class => expense.new_record? ? "new" : "edit"}
+    %div{:id => "form-container-#{form_id}", :style => defined?(show) && show ? nil : "display:none;"}
+      %div
+        %h4= form_title expense
+        .form-errors{:id => "form-errors-#{form_id}"}
+      
+        - remote_expenses_form(expense, form_id) do |f|
+          %fieldset
+            .form-row
+              .form-element
+                = f.label :amount, Expense.human_attribute_name('amount')
+                = f.text_field :amount, :size => 7, :maxlenth => 10, :class => "currency"
+              .form-element
+                = f.label :date, Expense.human_attribute_name('date')
+                = f.calendar_date_select :date, expense_date_selector_options(expense.date)
+            .form-row
+              .form-element
+                = f.label :description, Expense.human_attribute_name('description')
+                = text_field_with_auto_complete :expense, :description, { :size => 40, :maxlenth => 40 }, { :skip_style => true }
+          %p.form-footer
+            = f.submit t("views.form.save")
+            = cancel_expense_form_button form_id

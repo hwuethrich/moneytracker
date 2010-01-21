@@ -1,0 +1,4 @@
+table#balance tbody td.creditor {
+  color: green; }
+table#balance tbody td.debitor {
+  color: red; }

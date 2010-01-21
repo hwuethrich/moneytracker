@@ -1,0 +1,12 @@
+%tr{:id => "recurrent-payment-row-%s" % recurrent_payment.id, :class => cycle("odd", "even")}
+  %td.recurrent-payment
+  %td.right= h number_to_currency(recurrent_payment.amount)
+  %td= h recurrent_payment.sender.name
+  %td= h recurrent_payment.recipient.name
+  %td= h recurrent_payment.comment
+  %td.right= recurrent_payment.day
+  - (1..12).each do |m|
+    %td{:class => class_name_for_recurrent_payment_month(recurrent_payment, m)}
+  %td.action.center
+    = edit_recurrent_payment_link recurrent_payment
+    = destroy_recurrent_payment_link recurrent_payment

@@ -1,0 +1,12 @@
+table#recurrent-payments tbody td.recurrent-payment {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(../images/icons/recurrent-payment.png); }
+table#recurrent-payments tbody td.active-month {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(../images/icons/bullet_gray.png); }
+table#recurrent-payments tbody td.active-month-created {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(../images/icons/bullet_green.png); }

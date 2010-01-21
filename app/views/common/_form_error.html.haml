@@ -1,0 +1,7 @@
+.form-error{:id => "form-error-#{form_id}", :style => "display:none;" }
+  %div.title
+    = t ("activerecord.errors.template.header", :model => object.class.human_name, :count => object.errors.size)
+  
+  %ul
+    - object.errors.each_full do |msg|
+      %li= msg

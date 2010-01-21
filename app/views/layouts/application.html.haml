@@ -1,0 +1,50 @@
+!!! strict
+%html
+  %head
+    %title= "MoneyTracker - %s" % yield(:page_title)
+    %meta{ 'http-equiv' => 'Content-Type', :content => 'text/html; charset=UTF-8' }
+    
+    = javascript_include_tag :defaults, :cache => true
+    = javascript_include_tag "tablekit", :cache => false
+    
+    = stylesheet_link_tag 'default'
+    = stylesheet_link_tag 'common'
+    = stylesheet_link_tag 'expenses', 'recurrent_expenses', 'payments', 'recurrent_payments', 'users', 'balance', :cache => true
+    
+    = calendar_date_select_includes "moneytracker"
+    
+    :javascript
+      TableKit.options.rowEvenClass = 'even';
+      TableKit.options.rowOddClass = 'odd';
+      TableKit.options.editable = false;
+      
+    :javascript
+      _translations = {
+        "Today": "#{t 'views.calendar.today'}",
+        "OK": "#{t 'views.calendar.ok'}",
+        "Clear": "#{t 'views.calendar.clear'}",
+      }
+
+      Date.first_day_of_week = 1; 
+      Date.weekdays = $w("#{t 'views.calendar.weekdays'}");
+      Date.months = $w("#{I18n.t('date.month_names').compact.join(' ')}" );
+      
+
+  %body
+    #page-header
+
+      %img#header-logo{:src => image_path('header-logo.png')}
+      
+      = render :partial => 'common/menu'
+    
+    #page-content
+    
+      -sidebar = yield(:sidebar)
+      
+      %div{:id => sidebar ? "main-content-with-sidebar" : "main-content"}     
+        
+        =yield
+        
+      -if sidebar
+        #sidebar-content
+          =sidebar

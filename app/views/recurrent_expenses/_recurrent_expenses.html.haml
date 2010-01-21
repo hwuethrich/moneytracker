@@ -1,0 +1,40 @@
+= render :partial => 'common/highlight_row', :object => @recurrent_expense
+
+#recurrent-expenses-container
+  
+  = rounded_corner_top
+  
+  .grid-table-title
+    %h3= RecurrentExpense.human_name(:count => 2)
+    .actions= new_recurrent_expense_link
+  
+  %table#recurrent-expenses.grid{:cellspacing => 0, :cellpadding => 0, :class => "sortable"}
+
+    %thead#recurrent-expenses-head
+      
+      - if @recurrent_expense && @recurrent_expense.new_record?
+        = render :partial => 'form', :locals => { :recurrent_expense => @recurrent_expense, :form_id => @form_id }
+      
+      %tr
+        %th.nosort.first-col{:style => "width: 15px"}
+        %th{:style=> "width: 80px"}
+          = RecurrentExpense.human_attribute_name('amount')
+        %th{:style=> "width: 80px"} 
+          %small &empty; 
+          = t 'views.recurrent_expense.month'
+        %th{:style=> "width: 120px"}= User.human_name
+        %th.text 
+          = RecurrentExpense.human_attribute_name('description')
+        %th.nosort{:style=> "width: 20px"} 
+          = RecurrentExpense.human_attribute_name('day')
+        - (1..12).each do |m|
+          %th.center.nosort{:style => "width: 15px"}= m
+        %th.nosort{:style => "width: 100px"}
+    
+    %tbody#recurrent-expenses-body
+      = render :partial => "recurrent_expense", :collection => @recurrent_expenses
+      
+  .grid-table-footer
+    #recurrent-expense-indicator.indicator{:style => "display:none"} Processing request...
+    
+  = rounded_corner_bottom

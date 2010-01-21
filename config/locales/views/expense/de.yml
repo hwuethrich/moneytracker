@@ -1,0 +1,19 @@
+de:
+  views:
+
+    expense:
+      
+      # Menu
+      menu:
+        index: Ausgaben
+      
+      # Form
+      form:
+        title:
+          edit: Ausgabe bearbeiten
+          new: Neue Ausgabe erfassen
+      
+      user_statistic: Benutzerstatistik
+      expense_statistic: Ausgabenstatistik
+      history: Verlauf
+      

@@ -1,0 +1,405 @@
+@import colors.sass
+
+// Page body
+////////////////////////////
+body
+  :margin 0px
+  :font
+    :family Lucida Grande,Verdana,sans-serif
+    :size 12px
+  :background
+    :image url(../images/page-bg.png)
+    :repeat repeat-x
+    :color = !color_page_bg
+
+// Grid table title
+////////////////////////////
+.grid-table-title, .sidebar-title
+  :position relative
+
+  h3
+    :font-size 14px
+    :background-color = !color_table_title_bg
+    :margin 0px
+    :color = !color_table_title_text
+    :padding 3px 0px 5px 5px
+
+  h2
+    :font-size 12px
+    :background-color = !color_table_title_bg
+    :margin 0px
+    :color = !color_table_title_text
+    :padding 3px 0px 5px 5px
+
+  a
+    :text-decoration none
+    :color white
+    :padding 0px 3px
+
+  a:hover
+    :background = !color_table_title_bg + !color_highlight
+
+  .right
+    :position absolute
+    :right 5px
+    :top 2px
+
+  .actions
+    :font
+      :size 12px
+      :weight bold
+    :position absolute
+    :right 5px
+    :text-align right
+    :top 5px
+
+    a
+      :padding 2px 5px 2px 20px
+
+    a.new
+      :background
+        :image url(../images/icons/add.png)
+        :repeat no-repeat 
+        :position 2px 50%
+
+// Grid table
+////////////////////////////
+table.grid
+  :width 100%
+
+  .right
+    :text-align right
+    
+  .center
+    :text-align center
+
+  thead
+    tr
+      :background-image url(../images/table-header-bg.png)
+
+    th
+      :text-align left
+      :color= !color_table_header_text
+      :padding 4px 5px
+      :font-size 11px
+      :border
+        :left 1px solid #C7D99C
+        :right 1px solid #A8B25F
+        
+    th.first-col
+      :border
+        :left 1px solid #A8B25F    
+
+    th.sortcol
+      :cursor pointer 
+      :background-image url(../images/sort-bg.png)  
+      :background-repeat no-repeat
+      :background-position center right
+
+    th.sortasc
+      :background-image url(../images/sort-asc.png)
+
+    th.sortdesc
+      :background-image url(../images/sort-desc.png)
+
+  tbody
+
+    td
+      :font-size 11px
+      :padding 4px 5px
+      :border
+        :bottom = 1px solid !color_table_border
+        :left = 1px solid !color_table_border
+        
+      a
+        :color #A8B25F
+        :text-decoration none
+        
+      a:hover
+        :text-decoration underline
+
+    td.action, td.last-col
+      :border
+        :right = 1px solid !color_table_border
+    
+    td.action
+      :white-space nowrap
+      
+      a, .disabled-action
+        :font
+          :weight bold
+        :padding 2px 5px
+          
+      .disabled-action
+        :color #9FAEB2
+
+      a
+        :color #A8B25F
+        :text-decoration none
+
+      a:hover
+        :color white
+        :background-color #C7D99C
+      
+    tr.odd
+      :background-color = !color_table_row_odd_bg
+      
+      td.highlight
+        :background-color = !color_table_row_odd_bg - !color_highlight
+
+    tr.even
+      :background-color = !color_table_row_even_bg
+      
+      td.highlight
+        :background-color = !color_table_row_even_bg - !color_highlight
+      
+    tr.header
+      :background-color #9FAEB2
+      :color #414751
+
+      td
+        :border 0px
+        :font
+          :weight bold
+          
+      a
+        :text-decoration none
+        :color #414751
+      a:hover
+        :color white
+        
+      td.highlight
+        :background-color = #9FAEB2 - !color_highlight
+        
+    tr.separator
+      td
+        :border 0px
+        :height 2px
+        :padding 0px
+        
+  tfoot
+    :font-size 11px
+
+    tr
+      :color = !color_table_footer_text
+      :background-color = !color_table_footer_bg
+
+    td
+      :padding 4px 5px
+      :border-top = 2px solid white
+
+// Grid table footer
+////////////////////////////
+.grid-table-footer
+  :background-color = !color_table_title_bg
+  :color = !color_table_title_text
+  :padding 2px 5px
+  
+  .indicator
+    :font-size 70%
+    :padding-left 20px
+    :background-image url(../images/ajax-indicator.gif)
+    :background-repeat no-repeat
+    
+// Sidebar
+////////////////////////////
+.sidebar-block
+  :margin-bottom 10px
+
+.sidebar-content
+  :background-color #C7D99C
+  :border-style none solid
+  :border-color #9FAEB2
+  :border-width 1px
+  :padding 2px
+  
+#user-balance .sidebar-content
+  :text-align center
+  :color #414751
+  :font-size 10px
+  
+// Common form
+////////////////////////////
+input[type='text'], input[type='password'], select
+  :background
+    :color white
+  :padding 4px 3px
+  :margin-top 1px
+  :border = 1px solid !color_form_input_border
+  :color = !color_form_input_text
+  :font
+    :size 14px
+    :weight bold
+    
+input[type='submit'], input[type='button']
+  :background-color = !color_form_button_bg
+  :border = 1px solid !color_form_button_border
+  :color = !color_form_button_text
+  :font
+    :size 12px
+    :weight bold
+    
+input.currency
+  :padding-left 40px
+  :background
+    :image url(../images/currency_field_bg.png)
+    :repeat no-repeat 
+    :position 5px center
+    
+    
+// Month picker
+////////////////////////////
+.month-picker, .year-picker
+  :text-align center
+  :position relative
+  
+  form
+    :margin 0px
+  
+  span.year
+    :display block
+    :padding 4px
+    :color #414751
+    :font
+      :size 14px
+      :weight bold
+
+  select
+    :display inline
+    :font-size 12px
+    :padding 2px
+    
+  a
+    :position absolute
+    :text-decoration none
+    :padding 0px 10px
+    :color #414751
+    :top 0px
+    :font
+      :size 18px
+      :weight bold
+
+  .next
+    :right 0px
+
+  .prev
+    :left 0px
+    
+// Inline form
+////////////////////////////
+table.grid
+
+  td.new, td.edit
+    :padding 0px
+    :color = !color_form_text
+    :background-color = !color_form_bg
+    :border
+      :style none solid solid
+      :width medium 1px 1px
+      :color = !color_form_border
+
+    h4
+      :margin 0px
+      :font-size 12px
+      :color = !color_form_title_text
+      :padding 2px 5px
+      :background-color = !color_form_title_bg
+      
+    form
+      :padding 10px
+
+    .form-error
+      :padding 10px
+      :background-color = !color_form_errors_bg
+
+    fieldset
+      :clear both
+      :border medium none
+
+    .form-row
+      :clear both 
+      :float none
+      :margin-left 5px
+      :padding 2px
+
+    .form-element
+      :float left
+      :margin
+        :bottom 2px
+        :right 10px
+
+    label
+      :color = !color_form_text
+      :display block
+
+    label.required
+      :font-weight bold
+
+    .form-footer
+      :margin 5px
+  
+  td.edit
+    h4
+      :margin-top 1px
+
+
+// Rounded corners
+////////////////////////////
+.rounded-corner-top, .rounded-corner-bottom
+  :background-color = !color_page_bg
+
+.rounded-corner-1, .rounded-corner-2
+  :border
+    :style solid
+    :color = !color_table_title_bg + !color_highlight
+    :width 0px 1px 
+  :overflow hidden
+  :background-color = !color_table_title_bg
+  :display block 
+  :height 1px
+  :font-size 1px
+
+.rounded-corner-1
+  :margin
+    :left 1px
+    :right 1px
+
+.rounded-corner-2
+  :margin
+    :left 0px
+    :right 0px
+
+
+// Auto-completion
+//////////////////////////////
+div.auto_complete
+  :width 350px
+  :background-color white
+
+  ul
+    :border 1px solid #9FAEB2
+    :margin 0
+    :padding 0
+    :width 100%
+    :list-style-type none
+
+    li
+      :margin 0
+      :padding 3px
+      :font
+        :weight bold
+        :size 14px
+
+    li.selected
+      :background-color #E3F2DC
+
+    strong.highlight
+      :color #A8B25F
+      :margin 0
+      :padding 0
+      
+// Missing translations
+/////////////////////////////////
+.translation_missing
+  :background-color red
+  :color white

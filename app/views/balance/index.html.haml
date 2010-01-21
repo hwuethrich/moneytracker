@@ -1,0 +1,7 @@
+-content_for(:page_title) do
+  Balance
+
+-content_for(:sidebar) do
+  = render :partial => "sidebar", :locals => {:year => @year}
+  
+= render :partial => "balance"

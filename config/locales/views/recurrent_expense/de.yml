@@ -1,0 +1,21 @@
+de:
+  views:
+
+    recurrent_expense:
+      
+      # Menu
+      menu:
+        index: Wiederkehrende
+      
+      # Form
+      form:
+        title:
+          edit: Wiederkehrende Ausgabe bearbeiten
+          new: Neue wiederkehrende Ausgabe erfassen
+          
+        recurrance: Wiederholung
+        every: Jeden
+        day_of: Tag im
+        
+      # List
+      month: Monat

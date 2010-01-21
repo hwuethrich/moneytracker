@@ -1,0 +1,39 @@
+= render :partial => 'common/highlight_row', :object => @expense
+
+#expenses-container
+  
+  = rounded_corner_top
+  
+  .grid-table-title
+    %h3
+      = Expense.human_name(:count => 2)
+      = " - "
+      = l @date, :format => "%B %Y"
+    .actions= new_expense_link(@date)
+  
+  %table#expenses.grid{:cellspacing => 0, :cellpadding => 0, :class => "sortable"}
+  
+    %thead#expenses-head
+      
+      - if @expense && @expense.new_record?
+        = render :partial => 'form', :locals => { :expense => @expense, :form_id => @form_id, :show => true }
+      
+      %tr
+        %th.nosort.first-col{:style => "width: 15px"}
+        %th.sortfirstasc{:style=> "width: 70px"}
+          = Expense.human_attribute_name 'date'
+        %th{:style=> "width: 100px"}
+          = Expense.human_attribute_name 'amount'
+        %th{:style=> "width: 150px"} 
+          = User.human_name
+        %th.text 
+          = Expense.human_attribute_name 'description'
+        %th.nosort{:style => "width: 100px"}
+    
+    %tbody#expenses-body
+      = render :partial => "expense", :collection => @expenses
+      
+  .grid-table-footer
+    #expense-indicator.indicator{:style => "display:none"} Processing request...
+    
+  = rounded_corner_bottom

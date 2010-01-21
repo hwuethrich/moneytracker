@@ -1,0 +1,8 @@
+<% for i in 1..1000 %>
+expense<%= i %>:
+  id:              <%= i %>
+  amount:          <%= rand(1000) / 10.0 %>
+  description:     Expense <%= i %>
+  date:            <%= (Date.today - rand(1000).days).to_s(:db) %>
+  user_id:         <%= rand(10) + 1 %>
+<% end %>

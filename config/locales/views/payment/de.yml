@@ -1,0 +1,14 @@
+de:
+  views:
+
+    payment:
+      
+      # Menu
+      menu:
+        index: Zahlungen
+      
+      # Form
+      form:
+        title:
+          edit: Zahlung bearbeiten
+          new: Neue Zahlung erfassen

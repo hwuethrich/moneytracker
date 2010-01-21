@@ -1,0 +1,8 @@
+if @payment.valid?
+    page.replace 'user-balance', :partial => 'balance/user_balance', :locals => { :year => @payment.date.year }
+end
+
+page << render(
+  :partial => "common/update", 
+  :locals => { :form_id => @form_id, :object => @payment }
+)

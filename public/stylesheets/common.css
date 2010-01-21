@@ -1,0 +1,291 @@
+body {
+  margin: 0px;
+  font-family: Lucida Grande,Verdana,sans-serif;
+  font-size: 12px;
+  background-image: url(../images/page-bg.png);
+  background-repeat: repeat-x;
+  background-color: #c7d99c; }
+
+.grid-table-title, .sidebar-title {
+  position: relative; }
+  .grid-table-title h3,   .sidebar-title h3 {
+    font-size: 14px;
+    background-color: #414751;
+    margin: 0px;
+    color: #ffffff;
+    padding: 3px 0px 5px 5px; }
+  .grid-table-title h2,   .sidebar-title h2 {
+    font-size: 12px;
+    background-color: #414751;
+    margin: 0px;
+    color: #ffffff;
+    padding: 3px 0px 5px 5px; }
+  .grid-table-title a,   .sidebar-title a {
+    text-decoration: none;
+    color: white;
+    padding: 0px 3px; }
+  .grid-table-title a:hover,   .sidebar-title a:hover {
+    background: #505660; }
+  .grid-table-title .right,   .sidebar-title .right {
+    position: absolute;
+    right: 5px;
+    top: 2px; }
+  .grid-table-title .actions,   .sidebar-title .actions {
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    right: 5px;
+    text-align: right;
+    top: 5px; }
+    .grid-table-title .actions a,     .sidebar-title .actions a {
+      padding: 2px 5px 2px 20px; }
+    .grid-table-title .actions a.new,     .sidebar-title .actions a.new {
+      background-image: url(../images/icons/add.png);
+      background-repeat: no-repeat;
+      background-position: 2px 50%; }
+
+table.grid {
+  width: 100%; }
+  table.grid .right {
+    text-align: right; }
+  table.grid .center {
+    text-align: center; }
+  table.grid thead tr {
+    background-image: url(../images/table-header-bg.png); }
+  table.grid thead th {
+    text-align: left;
+    color: #414751;
+    padding: 4px 5px;
+    font-size: 11px;
+    border-left: 1px solid #C7D99C;
+    border-right: 1px solid #A8B25F; }
+  table.grid thead th.first-col {
+    border-left: 1px solid #A8B25F; }
+  table.grid thead th.sortcol {
+    cursor: pointer;
+    background-image: url(../images/sort-bg.png);
+    background-repeat: no-repeat;
+    background-position: center right; }
+  table.grid thead th.sortasc {
+    background-image: url(../images/sort-asc.png); }
+  table.grid thead th.sortdesc {
+    background-image: url(../images/sort-desc.png); }
+  table.grid tbody td {
+    font-size: 11px;
+    padding: 4px 5px;
+    border-bottom: 1px solid #9faeb2;
+    border-left: 1px solid #9faeb2; }
+    table.grid tbody td a {
+      color: #A8B25F;
+      text-decoration: none; }
+    table.grid tbody td a:hover {
+      text-decoration: underline; }
+  table.grid tbody td.action, table.grid tbody td.last-col {
+    border-right: 1px solid #9faeb2; }
+  table.grid tbody td.action {
+    white-space: nowrap; }
+    table.grid tbody td.action a, table.grid tbody td.action .disabled-action {
+      font-weight: bold;
+      padding: 2px 5px; }
+    table.grid tbody td.action .disabled-action {
+      color: #9FAEB2; }
+    table.grid tbody td.action a {
+      color: #A8B25F;
+      text-decoration: none; }
+    table.grid tbody td.action a:hover {
+      color: white;
+      background-color: #C7D99C; }
+  table.grid tbody tr.odd {
+    background-color: #ffffff; }
+    table.grid tbody tr.odd td.highlight {
+      background-color: #f0f0f0; }
+  table.grid tbody tr.even {
+    background-color: #eeeeee; }
+    table.grid tbody tr.even td.highlight {
+      background-color: #dfdfdf; }
+  table.grid tbody tr.header {
+    background-color: #9FAEB2;
+    color: #414751; }
+    table.grid tbody tr.header td {
+      border: 0px;
+      font-weight: bold; }
+    table.grid tbody tr.header a {
+      text-decoration: none;
+      color: #414751; }
+    table.grid tbody tr.header a:hover {
+      color: white; }
+    table.grid tbody tr.header td.highlight {
+      background-color: #909fa3; }
+  table.grid tbody tr.separator td {
+    border: 0px;
+    height: 2px;
+    padding: 0px; }
+  table.grid tfoot {
+    font-size: 11px; }
+    table.grid tfoot tr {
+      color: #000000;
+      background-color: #c4d7ed; }
+    table.grid tfoot td {
+      padding: 4px 5px;
+      border-top: 2px solid #ffffff; }
+
+.grid-table-footer {
+  background-color: #414751;
+  color: #ffffff;
+  padding: 2px 5px; }
+  .grid-table-footer .indicator {
+    font-size: 70%;
+    padding-left: 20px;
+    background-image: url(../images/ajax-indicator.gif);
+    background-repeat: no-repeat; }
+
+.sidebar-block {
+  margin-bottom: 10px; }
+
+.sidebar-content {
+  background-color: #C7D99C;
+  border-style: none solid;
+  border-color: #9FAEB2;
+  border-width: 1px;
+  padding: 2px; }
+
+#user-balance .sidebar-content {
+  text-align: center;
+  color: #414751;
+  font-size: 10px; }
+
+input[type='text'], input[type='password'], select {
+  background-color: white;
+  padding: 4px 3px;
+  margin-top: 1px;
+  border: 1px solid #a8b25f;
+  color: #414751;
+  font-size: 14px;
+  font-weight: bold; }
+
+input[type='submit'], input[type='button'] {
+  background-color: #a8b25f;
+  border: 1px solid #a8b25f;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold; }
+
+input.currency {
+  padding-left: 40px;
+  background-image: url(../images/currency_field_bg.png);
+  background-repeat: no-repeat;
+  background-position: 5px center; }
+
+.month-picker, .year-picker {
+  text-align: center;
+  position: relative; }
+  .month-picker form,   .year-picker form {
+    margin: 0px; }
+  .month-picker span.year,   .year-picker span.year {
+    display: block;
+    padding: 4px;
+    color: #414751;
+    font-size: 14px;
+    font-weight: bold; }
+  .month-picker select,   .year-picker select {
+    display: inline;
+    font-size: 12px;
+    padding: 2px; }
+  .month-picker a,   .year-picker a {
+    position: absolute;
+    text-decoration: none;
+    padding: 0px 10px;
+    color: #414751;
+    top: 0px;
+    font-size: 18px;
+    font-weight: bold; }
+  .month-picker .next,   .year-picker .next {
+    right: 0px; }
+  .month-picker .prev,   .year-picker .prev {
+    left: 0px; }
+
+table.grid td.new, table.grid td.edit {
+  padding: 0px;
+  color: #414751;
+  background-color: #c7d99c;
+  border-style: none solid solid;
+  border-width: medium 1px 1px;
+  border-color: #a8b25f; }
+  table.grid td.new h4,   table.grid td.edit h4 {
+    margin: 0px;
+    font-size: 12px;
+    color: #ffffff;
+    padding: 2px 5px;
+    background-color: #a8b25f; }
+  table.grid td.new form,   table.grid td.edit form {
+    padding: 10px; }
+  table.grid td.new .form-error,   table.grid td.edit .form-error {
+    padding: 10px;
+    background-color: #e3f2dc; }
+  table.grid td.new fieldset,   table.grid td.edit fieldset {
+    clear: both;
+    border: medium none; }
+  table.grid td.new .form-row,   table.grid td.edit .form-row {
+    clear: both;
+    float: none;
+    margin-left: 5px;
+    padding: 2px; }
+  table.grid td.new .form-element,   table.grid td.edit .form-element {
+    float: left;
+    margin-bottom: 2px;
+    margin-right: 10px; }
+  table.grid td.new label,   table.grid td.edit label {
+    color: #414751;
+    display: block; }
+  table.grid td.new label.required,   table.grid td.edit label.required {
+    font-weight: bold; }
+  table.grid td.new .form-footer,   table.grid td.edit .form-footer {
+    margin: 5px; }
+table.grid td.edit h4 {
+  margin-top: 1px; }
+
+.rounded-corner-top, .rounded-corner-bottom {
+  background-color: #c7d99c; }
+
+.rounded-corner-1, .rounded-corner-2 {
+  border-style: solid;
+  border-color: #505660;
+  border-width: 0px 1px;
+  overflow: hidden;
+  background-color: #414751;
+  display: block;
+  height: 1px;
+  font-size: 1px; }
+
+.rounded-corner-1 {
+  margin-left: 1px;
+  margin-right: 1px; }
+
+.rounded-corner-2 {
+  margin-left: 0px;
+  margin-right: 0px; }
+
+div.auto_complete {
+  width: 350px;
+  background-color: white; }
+  div.auto_complete ul {
+    border: 1px solid #9FAEB2;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none; }
+    div.auto_complete ul li {
+      margin: 0;
+      padding: 3px;
+      font-weight: bold;
+      font-size: 14px; }
+    div.auto_complete ul li.selected {
+      background-color: #E3F2DC; }
+    div.auto_complete ul strong.highlight {
+      color: #A8B25F;
+      margin: 0;
+      padding: 0; }
+
+.translation_missing {
+  background-color: red;
+  color: white; }

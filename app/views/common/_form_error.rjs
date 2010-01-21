@@ -1,0 +1,14 @@
+form_error = "form-error-#{form_id}"
+form_errors = "form-errors-#{form_id}"
+
+# Was there already an error?
+if flash[:form_error]
+  # Update old error message
+  page.replace form_error, :partial => 'common/form_error.html', :locals => { :object => object, :form_id => form_id }
+  page.show form_error
+else
+  # Create error dialog
+  page.insert_html :top, form_errors, { :partial => 'common/form_error.html', :locals => { :object => object, :form_id => form_id } }
+  page.visual_effect :blindDown, form_error, :duration => 0.5
+end 
+flash[:form_error] = true

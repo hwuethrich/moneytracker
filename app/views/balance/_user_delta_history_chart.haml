@@ -1,0 +1,10 @@
+#user-delta-history-chart.sidebar-block
+  = rounded_corner_top
+
+  .sidebar-title
+    %h2 User Balance History
+    
+  .sidebar-content{:style => "padding: 0px; background-color: #E3F2DC;"}
+    = user_delta_histroy_chart(current_user, year)
+ 
+  = rounded_corner_bottom

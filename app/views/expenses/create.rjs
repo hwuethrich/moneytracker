@@ -1,0 +1,10 @@
+if @expense.valid?
+  page.replace 'user-stats', :partial => 'user_stats', :locals => { :date => @expense.date }
+  page.replace 'expense-stats', :partial => 'expense_stats', :locals => { :date => @expense.date }
+  page.replace 'user-balance', :partial => 'balance/user_balance', :locals => { :year => @expense.date.year }
+end
+
+page << render(
+  :partial => "common/create", 
+  :locals => { :form_id => @form_id, :object => @expense }
+)

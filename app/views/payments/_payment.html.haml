@@ -1,0 +1,14 @@
+%tr{:id => "payment-row-%s" % payment.id, :class => cycle("odd", "even")}
+  %td{:class => payment.recurrent? ? "recurrent-payment" : "payment" }
+  %td.right= h payment.date
+  %td= h payment.sender.name
+  %td= h payment.recipient.name
+  %td.right= h number_to_currency(payment.amount)
+  %td
+    - if payment.recurrent?
+      = link_to payment.comment, recurrent_payment_path(payment.recurrent_payment)
+    - else
+      = payment.comment
+  %td.action.center
+    = edit_payment_link payment
+    = destroy_payment_link payment

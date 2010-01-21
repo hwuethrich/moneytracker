@@ -1,0 +1,22 @@
+de:
+  views:
+    
+    # Actions
+    action:
+      new: Neu erfassen
+      edit: Bearbeiten
+      delete: Löschen
+      
+    # Month picker
+    month_picker:
+      month: Monat
+      current: Aktueller
+      
+    # Year picker
+    year_picker:
+      year: Jahr
+      current: Aktuelles
+      
+    # Messages
+    message:
+      confirm_delete: 'Soll dieses {{model}} Objekt wirklich gelöscht werden?'

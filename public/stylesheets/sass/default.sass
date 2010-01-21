@@ -1,0 +1,77 @@
+@import colors.sass
+
+#page-header
+  :color white
+  :background-image url(../images/header-bg.png)
+  :position relative
+  :border-bottom = 2px solid !color_menu_bg
+  
+  img#header-logo
+    :margin 5px 0px 0px 10px
+      
+  #page-menu
+    :position absolute
+    :bottom 2px
+    :right 0px
+    :float left
+    :font-size 11px
+    :padding 0
+    :margin 0
+    :list-style-type none
+    
+    > li
+      :display inline
+      :color #9FAEB2
+      :margin-right 5px
+      :padding 4px 2px 2px 24px
+      :background
+        :color #414751
+        :repeat no-repeat
+        :position 3px center
+          
+      > ul
+        :list-style-type none
+        :display inline
+        :padding 0
+        :margin 0
+        
+        > li
+          :display inline
+          :padding 0
+          :margin 0
+          
+          .menu-item, .menu-item-active
+            :background-color = !color_menu_bg
+            :color = !color_menu_text
+            :text-decoration none
+            :position relative
+            :padding 2px 5px
+            :margin 0
+            
+          .menu-item-active
+            :background-color = !color_menu_active_bg
+            :color = !color_menu_active_text
+              
+          .menu-item-active, .menu-item:hover
+            :bottom 6px
+            :padding-bottom 10px
+            
+          .menu-item:hover
+            :background-color = !color_menu_bg + !color_highlight
+
+#page-content
+  :padding 20px 20px 10px 20px
+  :position relative
+
+  #main-content
+    :padding 10px 20px 10px 20px
+  
+  #main-content-with-sidebar
+    :padding 10px 300px 10px 20px
+    
+  #sidebar-content
+    :padding 10px 30px 10px 20px
+    :width 267px
+    :position absolute
+    :right 10px
+    :top 20px

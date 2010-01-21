@@ -1,0 +1,48 @@
+%tr{:id => "form-row-#{form_id}"}
+  %td{:colspan => 6, :class => user.new_record? ? "new" : "edit"}
+    %div{:id => "form-container-#{form_id}", :style => "display:none;"}
+      %div
+        %h4= user.new_record? ? "New User" : "Edit User"
+        
+        - remote_user_form(user, form_id) do |f|
+          
+          .form-errors{:id => "form-errors-#{form_id}"}
+          
+          %fieldset
+            .form-row
+              .form-element
+                = f.label :login
+                = f.text_field :login, :size => 20, :maxlenth => 20
+              
+              - if current_user.admin?
+                .form-element
+                  = f.label :admin
+                  = f.check_box :admin
+                   
+            .form-row
+              .form-element
+                = f.label :firstname
+                = f.text_field :firstname, :size => 20, :maxlenth => 40
+              .form-element
+                = f.label :lastname
+                = f.text_field :lastname, :size => 20, :maxlenth => 40           
+                
+            .form-row
+              .form-element
+                = f.label :email
+                = f.text_field :email, :size => 20, :maxlenth => 40
+              .form-element
+                = f.label :bank_account_no
+                = f.text_field :bank_account_no, :size => 20, :maxlenth => 40
+                
+            .form-row
+              .form-element
+                = f.label :password
+                = f.password_field :password, :size => 20, :maxlenth => 20
+              .form-element
+                = f.label :password_confirmation
+                = f.password_field :password_confirmation, :size => 20, :maxlenth => 20
+                
+          %p.form-footer
+            = f.submit "Save"
+            = cancel_user_form_button form_id

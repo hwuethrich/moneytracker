@@ -1,0 +1,12 @@
+%tr{:id => "recurrent-expense-row-%s" % recurrent_expense.id, :class => cycle("odd", "even")}
+  %td.recurrent-expense
+  %td.right= h number_to_currency(recurrent_expense.amount)
+  %td.right= h number_to_currency(recurrent_expense.average_per_month)
+  %td= h recurrent_expense.user.name
+  %td= h recurrent_expense.description
+  %td.right= recurrent_expense.day
+  - (1..12).each do |m|
+    %td{:class => class_name_for_recurrent_expense_month(recurrent_expense, m)}
+  %td.action.center
+    = edit_recurrent_expense_link recurrent_expense
+    = destroy_recurrent_expense_link recurrent_expense

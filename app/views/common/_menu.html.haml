@@ -1,0 +1,24 @@
+%ul#page-menu
+  %li{:style => "background-image: url(#{image_path('icons/expense.png')})"}
+    %ul
+      %li= menu_item 'expenses'
+      %li= menu_item 'recurrent_expenses'
+ 
+  %li{:style => "background-image: url(#{image_path('icons/payment.png')})"}
+    %ul
+      %li= menu_item 'payments'
+      %li= menu_item 'recurrent_payments'
+  
+  %li{:style => "background-image: url(#{image_path('icons/balance.png')})"}
+    %ul
+      %li= menu_item 'balance'
+    
+  %li{:style => "background-image: url(#{image_path('icons/group.png')})"}
+    %ul
+      %li= menu_item 'users'
+  
+  %li{:style => "background-image: url(#{image_path('icons/user.png')})"}
+    %ul
+      %li
+        = current_user.name
+      %li= menu_item 'sessions', 'destroy'

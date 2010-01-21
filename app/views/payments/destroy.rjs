@@ -1,0 +1,10 @@
+  page.replace 'user-balance', :partial => 'balance/user_balance', :locals => { :year => @payment.date.year }
+page.visual_effect(
+  :fade,
+  "payment-row-#{@payment.id}", 
+  :duration => 0.5
+)
+page.delay(0.5) do
+  page.remove "payment-row-#{@payment.id}"
+  page << "TableKit.reloadTable('payments');"
+end

@@ -1,0 +1,7 @@
+-content_for(:page_title) do
+  = Expense.human_name(:count => 2)
+
+-content_for(:sidebar) do
+  = render :partial => "sidebar", :locals => { :date => @date }
+  
+= render :partial => "expenses"

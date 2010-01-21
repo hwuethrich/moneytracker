@@ -1,0 +1,24 @@
+#balance-container
+  
+  = rounded_corner_top
+  
+  .grid-table-title
+    %h3= "Balance - %s" % @year
+  
+  %table#balance.grid{:cellspacing => 0, :cellpadding => 0}
+  
+    %thead#balance-head
+      %tr
+        %th.first-col
+        %th Expenses
+        %th{:colspan => 2} Payments
+        %th Total
+        %th Delta
+        %th Balance
+    
+    %tbody#balance-body
+      = render :partial => "month", :collection => (1..12).to_a.collect { |m| Date.civil(@year, m) }
+      
+  .grid-table-footer
+    
+  = rounded_corner_bottom
