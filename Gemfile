@@ -1,3 +1,5 @@
+bundle_path 'vendor/bundler_gems'
+
 source "http://gems.github.com"
 
 gem "calendar_date_select"

@@ -28,10 +28,10 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   
-  # config.gem "calendar_date_select"
-  # config.gem "haml"
-  # config.gem "mattetti-googlecharts", :lib => "gchart", :source => "http://gems.github.com"
-  # config.gem "color-tools", :lib => "color"
+  config.gem "calendar_date_select"
+  config.gem "haml"
+  config.gem "mattetti-googlecharts", :lib => "gchart", :source => "http://gems.github.com"
+  config.gem "color-tools", :lib => "color"
   
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
