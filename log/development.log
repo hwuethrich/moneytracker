@@ -4956,3 +4956,154 @@ Processing UsersController#update (for 127.0.0.1 at 2010-01-22 02:03:57) [PUT]
 Rendered users/_user (78.0ms)
 Rendered common/_update (80.0ms)
 Completed in 96ms (View: 85, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing ExpensesController#index (for 127.0.0.1 at 2010-01-22 02:14:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"expenses"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering expenses/index
+Rendered common/_rounded_corner_top (0.8ms)
+Rendered common/_rounded_corner_bottom (0.9ms)
+Rendered common/_month_picker (16.8ms)
+Rendered common/_rounded_corner_top (0.1ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-01-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-01-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-01-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-01-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-02-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-02-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-02-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-02-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-03-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-03-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-03-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-03-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-04-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-04-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-04-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-04-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-05-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-05-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-05-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-05-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-06-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-06-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-06-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-06-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-07-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-07-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-07-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-07-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-08-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-08-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-08-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-08-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-09-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-09-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-09-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-09-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-10-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-10-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-10-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-10-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-11-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-11-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-11-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-11-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date < '2010-12-01') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-12-01') AND ("payments".sender_id = 1)) AND ("payments".sender_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE (((date < '2010-12-01') AND ("payments".recipient_id = 1)) AND ("payments".recipient_id = 1)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date < '2010-12-01') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE ("expenses".user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".sender_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".recipient_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE ("expenses".user_id = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".sender_id = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".recipient_id = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE ("expenses".user_id = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".sender_id = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".recipient_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE ("expenses".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".sender_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".recipient_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE ("expenses".user_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".sender_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".recipient_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE ("expenses".user_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".sender_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum("payments".amount) AS sum_amount FROM "payments" WHERE ("payments".recipient_id = 3) [0m
+Rendered common/_rounded_corner_bottom (0.1ms)
+Rendered balance/_user_balance (230.8ms)
+Rendered common/_rounded_corner_top (0.1ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount, STRFTIME('%m', date) AS strftime_m_date FROM "expenses" WHERE (date >= '2010-01-01' AND date <= '2010-12-31') GROUP BY STRFTIME('%m', date) [0m
+Rendered common/_rounded_corner_bottom (0.1ms)
+Rendered expenses/_expense_stats (5.6ms)
+Rendered common/_rounded_corner_top (0.1ms)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (date >= '2010-01-01' AND date <= '2010-01-31') [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" ORDER BY firstname ASC, lastname ASC[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date >= '2010-01-01' AND date <= '2010-01-31') AND ("expenses".user_id = 1)) AND ("expenses".user_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date >= '2010-01-01' AND date <= '2010-01-31') AND ("expenses".user_id = 3)) AND ("expenses".user_id = 3)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum("expenses".amount) AS sum_amount FROM "expenses" WHERE (((date >= '2010-01-01' AND date <= '2010-01-31') AND ("expenses".user_id = 2)) AND ("expenses".user_id = 2)) [0m
+Rendered common/_rounded_corner_bottom (0.1ms)
+Rendered expenses/_user_stats (14.3ms)
+Rendered expenses/_sidebar (284.5ms)
+Rendered common/_highlight_row (1.1ms)
+Rendered common/_rounded_corner_top (0.1ms)
+  [4;35;1mExpense Load (0.5ms)[0m   [0mSELECT * FROM "expenses" WHERE (date >= '2010-01-01' AND date <= '2010-01-31') [0m
+  [4;36;1mRecurrentExpense Load (0.3ms)[0m   [0;1mSELECT * FROM "recurrent_expenses" WHERE ("recurrent_expenses"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered expenses/_expense (14.6ms)
+  [4;36;1mRecurrentExpense Load (0.3ms)[0m   [0;1mSELECT * FROM "recurrent_expenses" WHERE ("recurrent_expenses"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered expenses/_expense (3.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered expenses/_expense (2.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered expenses/_expense (2.0ms)
+Rendered common/_rounded_corner_bottom (0.1ms)
+Rendered expenses/_expenses (103.0ms)
+Rendered common/_menu_item (1.6ms)
+Rendered common/_menu_item (0.9ms)
+Rendered common/_menu_item (0.7ms)
+Rendered common/_menu_item (0.7ms)
+Rendered common/_menu_item (0.7ms)
+Rendered common/_menu_item (0.7ms)
+Rendered common/_menu_item (0.7ms)
+Rendered common/_menu (14.0ms)
+Completed in 508ms (View: 424, DB: 14) | 200 OK [http://localhost/]
+
+
+Processing ExpensesController#edit (for 127.0.0.1 at 2010-01-22 02:14:18) [GET]
+  Parameters: {"action"=>"edit", "authenticity_token"=>"EB5nRIWbX1c1I5whkyAIimWe+GXDDT9yervkwnw/BjA=", "id"=>"128", "controller"=>"expenses"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mExpense Load (0.3ms)[0m   [0mSELECT * FROM "expenses" WHERE ("expenses"."id" = 128) [0m
+Rendered expenses/_form (18.1ms)
+Rendered common/_edit (23.8ms)
+Completed in 39ms (View: 29, DB: 1) | 200 OK [http://localhost/expenses/128/edit?authenticity_token=EB5nRIWbX1c1I5whkyAIimWe%2BGXDDT9yervkwnw%2FBjA%3D]
