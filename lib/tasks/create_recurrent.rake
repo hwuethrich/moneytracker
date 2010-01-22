@@ -1,3 +1,6 @@
+desc "Cron Job"
+task :cron => "moneytracker:recure:all"
+
 namespace :moneytracker do
   
   namespace :recure do
