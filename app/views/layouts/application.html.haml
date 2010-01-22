@@ -11,8 +11,6 @@
     = stylesheet_link_tag 'common'
     = stylesheet_link_tag 'expenses', 'recurrent_expenses', 'payments', 'recurrent_payments', 'users', 'balance', :cache => true
     
-    = calendar_date_select_includes "moneytracker"
-    
     :javascript
       TableKit.options.rowEvenClass = 'even';
       TableKit.options.rowOddClass = 'odd';
