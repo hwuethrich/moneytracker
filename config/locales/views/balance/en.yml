@@ -1,0 +1,16 @@
+en:
+  views:
+    
+    balance:
+      
+      # Menu
+      menu:
+        index: Balance
+      
+      # Balance
+      balance: Balance
+      
+      # User Balance
+      user_balance: User Balance
+      credits: Credits
+      debts: Debts

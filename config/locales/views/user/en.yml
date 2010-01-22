@@ -1,0 +1,8 @@
+en:
+  views:
+
+    user:
+      
+      # Menu
+      menu:
+        index: Users

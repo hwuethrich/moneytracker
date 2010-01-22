@@ -1,0 +1,21 @@
+en:
+  views:
+
+    recurrent_expense:
+      
+      # Menu
+      menu:
+        index: Recurrent
+      
+      # Form
+      form:
+        title:
+          edit: Edit Recurrent Payment
+          new: Create new Recurrent Payment
+          
+        recurrance: Recurrance
+        every: Every
+        day_of: Day of
+        
+      # List
+      month: Month

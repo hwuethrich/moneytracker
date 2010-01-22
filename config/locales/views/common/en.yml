@@ -1,0 +1,23 @@
+en:
+  views:
+    
+    # Actions
+    action:
+      pay: Pay
+      new: New
+      edit: Edit
+      delete: Delete
+      
+    # Month picker
+    month_picker:
+      month: Month
+      current: Current
+      
+    # Year picker
+    year_picker:
+      year: Year
+      current: Current
+      
+    # Messages
+    message:
+      confirm_delete: 'Would you really like to delete this {{model}}?'

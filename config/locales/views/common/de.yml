@@ -3,6 +3,7 @@ de:
     
     # Actions
     action:
+      pay: Überweisen
       new: Neu erfassen
       edit: Bearbeiten
       delete: Löschen

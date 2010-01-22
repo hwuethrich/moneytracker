@@ -1,0 +1,8 @@
+en:
+  views:
+
+    session:
+      
+      # Menu
+      menu:
+        destroy: Logout

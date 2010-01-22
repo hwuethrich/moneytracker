@@ -1,0 +1,63 @@
+en:
+  
+  activerecord:
+
+    # Models
+    models:
+      
+      expense:
+        one: Expense
+        other: Expenses
+        
+      payment:
+        one: Payment
+        other: Payments
+
+      recurrent_expense:
+        one: Recurrent Expense
+        other: Recurrent Expenses
+
+      recurrent_payment:
+          one: Recurrent Payment
+          other: Recurrent Payments
+
+      user:
+        one: User
+        other: Users
+
+    # Attributes
+    attributes:
+      
+      common:
+        
+        expense: &common_expense_attributes
+          amount: Amount
+          description: Description
+          
+        payment: &common_payment_attributes
+          amount: Amount
+          comment: Comment
+          sender: Sender
+          recipient: Recipient
+        
+        recurrent: &common_recurrent_attributes
+          day: Day
+      
+      expense: 
+        <<: *common_expense_attributes
+        date: Date
+        
+      payment:
+        <<: *common_payment_attributes
+        date: Date
+        
+      recurrent_expense: 
+          <<: *common_expense_attributes
+          <<: *common_recurrent_attributes
+
+      recurrent_payment:
+          <<: *common_payment_attributes
+          <<: *common_recurrent_attributes
+
+      user:
+        email: E-Mail

@@ -1,0 +1,18 @@
+en:
+  views:
+
+    expense:
+      
+      # Menu
+      menu:
+        index: Expenses
+      
+      # Form
+      form:
+        title:
+          edit: Edit Expense
+          new: Create new Expense
+      
+      user_statistic: User Statistics
+      expense_statistic: Expense Statistics
+      history: History

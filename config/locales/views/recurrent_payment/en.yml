@@ -1,0 +1,14 @@
+en:
+  views:
+
+    recurrent_payment:
+      
+      # Menu
+      menu:
+        index: Recurrent
+      
+      # Form
+      form:
+        title:
+          edit: Edit Recurrent Payment
+          new: Create new Recurrent Payment

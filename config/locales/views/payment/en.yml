@@ -1,0 +1,14 @@
+en:
+  views:
+
+    payment:
+      
+      # Menu
+      menu:
+        index: Payments
+      
+      # Form
+      form:
+        title:
+          edit: Edit Payment
+          new: Create new Payment

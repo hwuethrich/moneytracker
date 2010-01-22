@@ -1,0 +1,8 @@
+en:
+  views:
+
+    calendar:
+      today: Today
+      ok: OK
+      clear: Clear
+      weekdays: M T W T F S S
