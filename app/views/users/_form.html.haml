@@ -34,6 +34,11 @@
               .form-element
                 = f.label :bank_account_no
                 = f.text_field :bank_account_no, :size => 20, :maxlenth => 40
+
+            .form-row
+              .form-element
+                = f.label :language
+                = select :user, :language, [["English", "en"],["Deutsch", "de"]]
                 
             .form-row
               .form-element
