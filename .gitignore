@@ -1,4 +1,6 @@
 .DS_Store
-.svn
-vendor/gems
-vendor/bundler_gems
+
+log/*.log  
+tmp/**/*   
+config/database.yml
+db/*.sqlite3
