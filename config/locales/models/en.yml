@@ -14,12 +14,12 @@ en:
         other: Payments
 
       recurrent_expense:
-        one: Recurrent Expense
-        other: Recurrent Expenses
+        one: Recurring Expense
+        other: Recurring Expenses
 
       recurrent_payment:
-          one: Recurrent Payment
-          other: Recurrent Payments
+          one: Recurring Payment
+          other: Recurring Payments
 
       user:
         one: User

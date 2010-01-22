@@ -10,8 +10,8 @@ en:
       # Form
       form:
         title:
-          edit: Edit Recurrent Payment
-          new: Create new Recurrent Payment
+          edit: Edit Recurring Payment
+          new: Create new Recurring Payment
           
         recurrance: Recurrance
         every: Every
