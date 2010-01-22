@@ -233,3 +233,104 @@ ActionView::TemplateError (undefined method `debug' for #<ActionView::Base:0x103
     vendor/bundler_gems/ruby/1.8/gems/haml-2.2.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
     vendor/bundler_gems/ruby/1.8/gems/haml-2.2.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
     vendor/bundler_gems/ruby/1.8/gems/haml-2.2.15/lib/sass/plugin/rails.rb:19:in `process'
+
+
+Processing ExpensesController#index (for 127.0.0.1 at 2010-01-22 01:03:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"expenses"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-22 01:03:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/login
+Rendering sessions/new
+
+ActionView::TemplateError (undefined method `image_path' for #<ActionView::Base:0x102ff1b50>) on line #1 of app/views/sessions/new.html.haml:
+1: %img#login-logo{:src => image_path('logo.png')}
+2: 
+3: #login
+4:   = render :partial => 'login_form'
+
+    app/views/sessions/new.html.haml:1:in `_run_haml_app47views47sessions47new46html46haml'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (39.7ms)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-01-22 01:03:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+
+ActionView::TemplateError (undefined method `debug' for #<ActionView::Base:0x102ff1b50>) in /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/templates/rescues/_request_and_response.erb:
+
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (36.6ms)
+/!\ FAILSAFE /!\  Fri Jan 22 01:03:04 +0100 2010
+  Status: 500 Internal Server Error
+  
+ActionView::TemplateError (undefined method `debug' for #<ActionView::Base:0x102ebf5e8>) in /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/templates/rescues/_request_and_response.erb:
+
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+
+    In /library/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/templates/rescues/_request_and_response.erb
+
+
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-22 01:03:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/login
+Rendering sessions/new
+
+ActionView::TemplateError (undefined method `image_path' for #<ActionView::Base:0x10341bd48>) on line #1 of app/views/sessions/new.html.haml:
+1: %img#login-logo{:src => image_path('logo.png')}
+2: 
+3: #login
+4:   = render :partial => 'login_form'
+
+    app/views/sessions/new.html.haml:1:in `_run_haml_app47views47sessions47new46html46haml'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (41.8ms)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-01-22 01:03:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+
+ActionView::TemplateError (undefined method `debug' for #<ActionView::Base:0x10341bd48>) in /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/templates/rescues/_request_and_response.erb:
+
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (37.4ms)
+/!\ FAILSAFE /!\  Fri Jan 22 01:03:07 +0100 2010
+  Status: 500 Internal Server Error
+  
+ActionView::TemplateError (undefined method `debug' for #<ActionView::Base:0x10353a8c8>) in /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/templates/rescues/_request_and_response.erb:
+
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+
+    In /library/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/templates/rescues/_request_and_response.erb
+
+
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/bundler_gems/ruby/1.8/gems/haml-2.2.17/rails/./lib/sass/plugin/rails.rb:19:in `process'
