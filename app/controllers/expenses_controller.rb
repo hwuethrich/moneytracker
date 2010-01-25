@@ -53,7 +53,7 @@ class ExpensesController < ApplicationController
   def new
     @expense = Expense.new
     @expense.date = params[:date].nil? ? Date.today : Date.parse(params[:date])
-    @form_id = @expense.object_id
+    @form_id = @expense.id
 
     respond_to do |format|
       format.html { index }
@@ -129,7 +129,7 @@ class ExpensesController < ApplicationController
   end
   
   def cancel
-    if Expense.exists? params[:id]
+    if params[:id] && Expense.exists?(params[:id])
       @expense = Expense.find(params[:id])
       @form_id = @expense.id
     else

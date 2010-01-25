@@ -54,7 +54,7 @@ class PaymentsController < ApplicationController
     @payment.date = params[:date].nil? ? Date.today : Date.parse(params[:date])
     
     @recipients = User.by_name.except(current_user)
-    @form_id = @payment.object_id
+    @form_id = @payment.id
 
     respond_to do |format|
       format.html { index }
@@ -132,7 +132,7 @@ class PaymentsController < ApplicationController
   end
   
   def cancel
-    if Payment.exists? params[:id]
+    if params[:id] && Payment.exists?(params[:id])
       @payment = Payment.find(params[:id])
       @form_id = @payment.id
     else
